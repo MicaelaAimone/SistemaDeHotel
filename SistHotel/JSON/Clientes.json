@@ -1,0 +1,25 @@
+{
+ "arrayClientes":[{
+  "nombre":"Jose",
+  "apellido":"Perez",
+  "genero":"M",
+  "nacionalidad":"Argentina",
+  "ciudad":"Mar del Plata"
+  "dni":"23456325",
+  "domicilio":"Belgrano 2345",
+  "idClientes":"0",
+  "cantPersonas":"2"	
+  },
+  {
+  "nombre":"Maria",
+  "apellido":"Pennisi",
+  "genero":"F",
+  "nacionalidad":"Argentina",
+  "ciudad":"Mar del Plata"
+  "dni":"21466825",
+  "domicilio":"Av. Colon 123",
+  "idClientes":"1",
+  "cantPersonas":"4"	
+  },
+]
+}

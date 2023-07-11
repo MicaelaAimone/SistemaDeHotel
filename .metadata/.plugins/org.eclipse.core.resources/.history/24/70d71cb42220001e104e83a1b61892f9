@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author Mica
+ *
+ */
+module SistHotel {
+}
