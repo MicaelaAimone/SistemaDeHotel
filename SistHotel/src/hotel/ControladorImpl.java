@@ -16,8 +16,7 @@ public class ControladorImpl implements Controlador{
 	
 	@Override
 	public void habitaciones() {
-		// TODO Auto-generated method stub
-		
+	
 	}
 
 	@Override

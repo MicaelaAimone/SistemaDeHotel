@@ -1,13 +1,17 @@
 package main;
 
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.JSONArray;
+import org.json.JSONTokener;
 
-public class App {
+import netscape.javascript.JSObject;
 
-	//ESCRIBIR UN ARCHIVO JSON
+public class App{
+
+	// ESCRIBIR UN ARCHIVO JSON
 	public static void grabar(JSONArray array) { // recibe un JSON Array
 		try {
 			FileWriter file = new FileWriter("test.json");
@@ -20,6 +24,17 @@ public class App {
 			e.printStackTrace();
 		}
 	}
-	
-	
+
+	// Leer
+	public static JSONTokener leer(String archivo) {
+		//json tokener permite abrir un arhivo json por medio del file reader
+		JSONTokener tokener = null; 
+		try {
+			tokener = new JSONTokener(new FileReader(archivo));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		return tokener;
+	}
+
 }
