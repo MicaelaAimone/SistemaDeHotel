@@ -1,17 +1,17 @@
 package archivosEyL;
 
-/*import java.io.FileNotFoundException;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
 import org.json.JSONArray;
 import org.json.JSONTokener;
 
-import netscape.javascript.JSObject;
-*/
+
 public class JSONUtil{
  
-/*
+
 	// ESCRIBIR UN ARCHIVO JSON
 	public static void grabar(JSONArray array) { // recibe un JSON Array
 		try {
@@ -40,5 +40,5 @@ public class JSONUtil{
 		}
 		return tokener;
 	}
-*/
+
 }

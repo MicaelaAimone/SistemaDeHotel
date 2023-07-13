@@ -35,4 +35,12 @@ public class Empleados extends Personas {
 	public String getEstado() {
 		return estado;
 	}
+
+	@Override
+	public String toString() {
+		return "Empleados [idPersonal=" + idPersonal + ", sueldo=" + sueldo + ", horasSemanales=" + horasSemanales
+				+ ", estado=" + estado + "]";
+	}
+	
+	
 }

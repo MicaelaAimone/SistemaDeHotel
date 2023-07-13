@@ -34,6 +34,8 @@ public class Reserva{
 	public int getInfoHabitacion() {
 		return infoHabitacion;
 	}
+	
+	
 
 
 }

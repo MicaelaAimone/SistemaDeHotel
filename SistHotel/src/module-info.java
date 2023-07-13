@@ -6,4 +6,5 @@
  *
  */
 module SistHotel {
+	requires java.json;
 }
