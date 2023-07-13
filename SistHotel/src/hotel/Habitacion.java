@@ -6,7 +6,7 @@ public class Habitacion {
 	short numero; // como los nros son por ej = "304" el primer nro es el piso y los dos
 					// siguientes el nro de habitacion
 	boolean ocupado;
-	byte estado;
+	byte estado; 
 
 	// constructor
 	public Habitacion(short numero, boolean ocupado, byte estado) {

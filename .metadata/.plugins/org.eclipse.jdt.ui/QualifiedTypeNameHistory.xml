@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
     <fullyQualifiedTypeName name="netscape.javascript.JSObject"/>
-    <fullyQualifiedTypeName name="org.json.JSONTokener"/>
     <fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+    <fullyQualifiedTypeName name="org.json.JSONTokener"/>
+    <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
+    <fullyQualifiedTypeName name="hotel.Cliente"/>
+    <fullyQualifiedTypeName name="hotel.ControladorImpl"/>
+    <fullyQualifiedTypeName name="hotel.Empleados"/>
+    <fullyQualifiedTypeName name="hotel.Habitacion"/>
+    <fullyQualifiedTypeName name="hotel.Personas"/>
+    <fullyQualifiedTypeName name="hotel.Reserva"/>
+    <fullyQualifiedTypeName name="java.io.FileReader"/>
+    <fullyQualifiedTypeName name="archivosEyL.JSONUtil"/>
+    <fullyQualifiedTypeName name="org.json.JSONArray"/>
+    <fullyQualifiedTypeName name="org.json.JSONObject"/>
 </qualifiedTypeNameHistroy>
