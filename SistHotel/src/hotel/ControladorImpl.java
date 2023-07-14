@@ -20,7 +20,6 @@ public class ControladorImpl implements Controlador{
 	
 	@Override
 	public void habitaciones() {
-	
 	}
 		
 	
@@ -32,4 +31,11 @@ public class ControladorImpl implements Controlador{
 		App2.mostrarDisponibles(jsonArrayHabitaciones);
 	}
 
+	@Override
+	public void habitacionesNoDisp() {
+		JSONArray jsonArrayHabitaciones;
+		jsonArrayHabitaciones = App2.crearArrayHabitaciones();
+		App2.mostrarNoDisponibles(jsonArrayHabitaciones);
+	}
+	
 }

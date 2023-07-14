@@ -28,26 +28,7 @@ public class App2 {
 			}
 		} catch (JSONException e) {
 			e.printStackTrace();
-		}
-		
-
-		try {
-			JSONArray jsonArrayHabitaciones = new JSONArray(JSONUtil.leer("../Habitaciones.json"));
-
-			for (int i = 0; i < jsonArrayHabitaciones.length(); i++) {
-				JSONObject jsonObjectHabitaciones = jsonArrayHabitaciones.getJSONObject(i);
-				System.out.println("Numero: " + jsonObjectHabitaciones.getInt("numero"));
-				System.out.println("Ocupado: " + jsonObjectHabitaciones.getBoolean("ocupado"));
-				System.out.println("Estado: " + jsonObjectHabitaciones.getInt("estado"));
-
-				System.out.println("-------------------------------------------");
-			}
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
-		JSONArray jsonArrayHabitaciones;
-		jsonArrayHabitaciones = crearArrayHabitaciones();
-		mostrarDisponibles(jsonArrayHabitaciones);
+		}	
 	}
 	
 	public static JSONArray crearArrayHabitaciones() { //pasa de json a un JSONArray 
@@ -62,6 +43,7 @@ public class App2 {
 	
 	public static void mostrarDisponibles(JSONArray arreglo) {
 		int num=0;
+		System.out.println("Las habitaciones disponibles son:");
 		for (int i = 0;i < arreglo.length();i++) {
 			JSONObject objeto;
 			try {
@@ -71,7 +53,6 @@ public class App2 {
 				boolean ocupado = objeto.getBoolean("ocupado");
 				int estado = objeto.getInt("estado"); 
 				
-				System.out.println("Las habitaciones disponibles son:");
 				if (ocupado == false ) { //comprueba que no este ocupada
 					if (estado == 1) { //comprueba que sea habitable
 						num+=1;
@@ -91,6 +72,7 @@ public class App2 {
 	
 	public static void mostrarNoDisponibles(JSONArray arreglo) {
 		int num=0;
+		System.out.println("Las habitaciones no disponible son:");
 		for (int i = 0;i < arreglo.length();i++) {
 			JSONObject objeto;
 			try {
@@ -99,27 +81,32 @@ public class App2 {
 				boolean ocupado = objeto.getBoolean("ocupado");
 				int estado = objeto.getInt("estado");
 				
-				if (ocupado == true) { //comprueba que este ocupada
+				if (ocupado == false) { //comprueba que este ocupada
 					if (estado != 1 ) {
+						num+=1;
 						String motivo = detallarMotivo(estado);
 						System.out.println(numero + ". Motivo: " + detallarMotivo(estado));
-					}
-				} else {
-					
+					} 
+					} else {
+						num+=1;
+						System.out.println("La habitacion " + numero + " esta ocupada");
 				}
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
+		if (num==0) {
+			System.out.println("Todas las habitaciones estan disponibles");
+		}
 	}
 	
 	public static String detallarMotivo(int i) { // pasa de numero a string el estado
 		switch (i) {
 		case 2: 
-			return "reparación";
+			return "reparacion";
 		case 3:
-			return "desinfección";
+			return "desinfeccion";
 		case 4: 
 			return "limpieza";
 		default: return null;

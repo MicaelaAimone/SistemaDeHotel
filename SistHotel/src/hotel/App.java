@@ -63,11 +63,11 @@ public class App {
 					opcionHabitacion = tc.nextInt();
 					switch (opcionHabitacion) {
 					case 1:
-						System.out.println("opciones disp");
 						controladorImpl.habitacionesDisp();
+						System.out.println();
 						break;
 					case 2:
-						System.out.println("opciones ocupadas");
+						controladorImpl.habitacionesNoDisp();
 						break;
 					}
 					break;
