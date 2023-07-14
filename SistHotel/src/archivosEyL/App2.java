@@ -45,6 +45,84 @@ public class App2 {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-
+		JSONArray jsonArrayHabitaciones;
+		jsonArrayHabitaciones = crearArrayHabitaciones();
+		
+	}
+	
+	public static JSONArray crearArrayHabitaciones() { //pasa de json a un JSONArray 
+		try {
+			JSONArray Array = new JSONArray(JSONUtil.leer("../Habitaciones.json"));
+			return Array;
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return null;		
+	}
+	
+	public static void mostrarDisponibles(JSONArray arreglo) {
+		int num=0;
+		for (int i = 0;i < arreglo.length();i++) {
+			JSONObject objeto;
+			try {
+				
+				objeto = arreglo.getJSONObject(i);
+				int numero = objeto.getInt("numero");
+				boolean ocupado = objeto.getBoolean("ocupado");
+				int estado = objeto.getInt("estado"); 
+				
+				System.out.println("Las habitaciones disponibles son:");
+				if (ocupado == false ) { //comprueba que no este ocupada
+					if (estado == 1) { //comprueba que sea habitable
+						num+=1;
+						System.out.print(numero + ". ");
+					}
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+		if (num==0) {
+			System.out.println("No hay habitaciones disponibles");
+		}
+	}
+	
+	public static void mostrarNoDisponibles(JSONArray arreglo) {
+		int num=0;
+		for (int i = 0;i < arreglo.length();i++) {
+			JSONObject objeto;
+			try {
+				objeto = arreglo.getJSONObject(i);
+				int numero = objeto.getInt("numero");
+				boolean ocupado = objeto.getBoolean("ocupado");
+				int estado = objeto.getInt("estado");
+				
+				if (ocupado == true) { //comprueba que este ocupada
+					if (estado != 1 ) {
+						String motivo = detallarMotivo(estado);
+						System.out.println(numero + ". Motivo: " + detallarMotivo(estado));
+					}
+				} else {
+					
+				}
+			} catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	public static String detallarMotivo(int i) { // pasa de numero a string el estado
+		switch (i) {
+		case 2: 
+			return "reparación";
+		case 3:
+			return "desinfección";
+		case 4: 
+			return "limpieza";
+		default: return null;
+		}
 	}
 }
