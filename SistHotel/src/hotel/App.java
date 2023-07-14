@@ -15,6 +15,7 @@ public class App {
 	public static void main(String[] args) {
 		Scanner tc = new Scanner(System.in);
 
+		ControladorImpl controladorImpl = new ControladorImpl();
 		boolean salir = false;
 		int opcion = 0;
 
@@ -63,6 +64,7 @@ public class App {
 					switch (opcionHabitacion) {
 					case 1:
 						System.out.println("opciones disp");
+						controladorImpl.habitacionesDisp();
 						break;
 					case 2:
 						System.out.println("opciones ocupadas");

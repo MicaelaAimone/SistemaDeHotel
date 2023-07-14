@@ -47,7 +47,7 @@ public class App2 {
 		}
 		JSONArray jsonArrayHabitaciones;
 		jsonArrayHabitaciones = crearArrayHabitaciones();
-		
+		mostrarDisponibles(jsonArrayHabitaciones);
 	}
 	
 	public static JSONArray crearArrayHabitaciones() { //pasa de json a un JSONArray 

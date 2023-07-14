@@ -1,5 +1,9 @@
 package hotel;
 
+import org.json.JSONArray;
+
+import archivosEyL.App2;
+
 public class ControladorImpl implements Controlador{
 
 	//va a recibir una lista de habitaciones y clientes ya previstos (con el respectivo tiempo que va a estar en el hotel) (y si ya estuvo alguna vez)
@@ -18,11 +22,14 @@ public class ControladorImpl implements Controlador{
 	public void habitaciones() {
 	
 	}
-
+		
+	
 	@Override
 	public void habitacionesDisp() {
 		// TODO Auto-generated method stub
-		
+		JSONArray jsonArrayHabitaciones;
+		jsonArrayHabitaciones = App2.crearArrayHabitaciones();
+		App2.mostrarDisponibles(jsonArrayHabitaciones);
 	}
 
 }
